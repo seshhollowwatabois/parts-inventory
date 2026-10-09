@@ -22,7 +22,7 @@ let sb=null,session=null,profile=null,parts=[],sales=[],members=[],activeTab='in
 const $=id=>document.getElementById(id), money=n=>'₾'+Number(n||0).toLocaleString('ka-GE',{minimumFractionDigits:2,maximumFractionDigits:2});
 function notice(id,msg,error=false){const e=$(id);e.textContent=msg;e.classList.remove('hidden','error');if(error)e.classList.add('error')}
 function hideNotice(id){$(id).classList.add('hidden')}
-function config(){return {url:localStorage.getItem('parts_supabase_url')||'',key:localStorage.getItem('parts_supabase_key')||''}}
+function config(){return {url:localStorage.getItem('parts_supabase_url')||'https://hudxedlaylvrgxjzydsk.supabase.co',key:localStorage.getItem('parts_supabase_key')||'sb_publishable_KDhhDcF3q5eQKQs9h0uOcA_nrfE0ZA0'}}
 function showAuth(){ $('setup').classList.add('hidden');$('auth').classList.remove('hidden');$('app').classList.add('hidden');$('topUser').classList.add('hidden')}
 function showSetup(){ $('setup').classList.remove('hidden');$('auth').classList.add('hidden');$('app').classList.add('hidden')}
 function showApp(){ $('setup').classList.add('hidden');$('auth').classList.add('hidden');$('app').classList.remove('hidden');$('topUser').classList.remove('hidden');$('userEmail').textContent=session.user.email||''}
